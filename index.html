@@ -1,37 +1,87 @@
 <html>
-  <!-- <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://lihautan.com/browser-pet/content.css"
-  /> -->
   <body>
-    <!-- <script src="https://lihautan.com/browser-pet/content.js"></script> -->
+    <script>
+      let petList = [
+        {
+          name: "dog",
+          url: "https://lihautan.com/browser-pet/dog.png",
+          width: 100,
+          height: 100,
+          top: 0,
+          left: 0,
+          speed: 1,
+          direction: "right"
+        },
+        {
+          name: "cat",
+          url: "https://lihautan.com/browser-pet/cat.png",
+          width: 100,
+          height: 100,
+          top: 0,
+          left: 0,
+          speed: 1,
+          direction: "right"
+        }
+      ];
+
+      document.getElementById("pet_row").innerHTML = petList
+        .map(
+          (pet) => `
+          <td>
+            ${pet.name}
+            </td>
+            <td>
+              <img
+                id="${pet.name}"
+                src="${pet.url}"
+                width="${pet.width}"
+                height="${pet.height}"
+                style="position: absolute; top: ${pet.top}px; left: ${pet.left}px;"
+              />
+            </td>
+            <td>
+              <button id="${pet.name}_left">Left</button>
+              <button id="${pet.name}_right">Right</button>
+            </td>
+      `
+        )
+        .join("");
+    </script>
     <div style="text-align: center; width: 500px; margin-top: 50px">
-      <input type="text" hidden />
       <center>
         <table id="pet-list" style="width: 100%" border="1">
           <tr>
             <th>Name</th>
-            <th>Age</th>
             <th>Image</th>
             <th>Actions</th>
           </tr>
-          <tr align="center">
+          <tr align="center" id="pet_row">
             <td>Tom</td>
-            <td>2</td>
             <td>
               <img
-                src="https://lihautan.com/browser-pet/images/tom.png"
+                src="./pets/animation_500_l9ny6hk3.gif"
                 width="100"
                 height="100"
               />
             </td>
             <td>
-              <button>Choose Me</button>
+              <button onclick="test();">Choose Me</button>
             </td>
           </tr>
         </table>
       </center>
     </div>
   </body>
+
+  <script>
+    function test() {
+      let pet = document.getElementById("pet-list");
+      pet.style.display = "none";
+      let petImage = document.createElement("img");
+      petImage.src = "./pets/animation_500_l9ny6hk3.gif";
+      petImage.width = "100";
+      petImage.height = "100";
+      document.body.appendChild(petImage);
+    }
+  </script>
 </html>
