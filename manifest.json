@@ -2,15 +2,16 @@
   "manifest_version": 3,
   "name": "Petpets",
   "description": "Petpets - A web extension for virtual petpet adoption",
-  "version": "1.0.1",
+  "version": "1.0.5",
   "action":{
         "default_popup": "index.html",
-        "default_title": "Latest Covid Report"
+        "default_title": "Virtual Pets"
   },
   "content_scripts": [
     {
       "matches": ["https://www.jahneer.me/*"],
-      "js": ["script.js"]
+      "js": ["./script/script.js"],
+      "css":["./css/content.css"]
     }
   ],
   "permissions": [
