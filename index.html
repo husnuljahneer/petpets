@@ -1,87 +1,19 @@
 <html>
-  <body>
-    <script>
-      let petList = [
-        {
-          name: "dog",
-          url: "https://lihautan.com/browser-pet/dog.png",
-          width: 100,
-          height: 100,
-          top: 0,
-          left: 0,
-          speed: 1,
-          direction: "right"
-        },
-        {
-          name: "cat",
-          url: "https://lihautan.com/browser-pet/cat.png",
-          width: 100,
-          height: 100,
-          top: 0,
-          left: 0,
-          speed: 1,
-          direction: "right"
-        }
-      ];
+  <link rel="stylesheet" href="./css/main.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+    rel="stylesheet"
+  />
 
-      document.getElementById("pet_row").innerHTML = petList
-        .map(
-          (pet) => `
-          <td>
-            ${pet.name}
-            </td>
-            <td>
-              <img
-                id="${pet.name}"
-                src="${pet.url}"
-                width="${pet.width}"
-                height="${pet.height}"
-                style="position: absolute; top: ${pet.top}px; left: ${pet.left}px;"
-              />
-            </td>
-            <td>
-              <button id="${pet.name}_left">Left</button>
-              <button id="${pet.name}_right">Right</button>
-            </td>
-      `
-        )
-        .join("");
-    </script>
-    <div style="text-align: center; width: 500px; margin-top: 50px">
-      <center>
-        <table id="pet-list" style="width: 100%" border="1">
-          <tr>
-            <th>Name</th>
-            <th>Image</th>
-            <th>Actions</th>
-          </tr>
-          <tr align="center" id="pet_row">
-            <td>Tom</td>
-            <td>
-              <img
-                src="./pets/animation_500_l9ny6hk3.gif"
-                width="100"
-                height="100"
-              />
-            </td>
-            <td>
-              <button onclick="test();">Choose Me</button>
-            </td>
-          </tr>
-        </table>
-      </center>
+  <body onload="onload()">
+    <script src="./script/main.js"></script>
+    <div class="container">
+      <div id="header">
+        <h1>Virtual Waifu</h1>
+      </div>
+      <div id="pet_row"></div>
     </div>
   </body>
-
-  <script>
-    function test() {
-      let pet = document.getElementById("pet-list");
-      pet.style.display = "none";
-      let petImage = document.createElement("img");
-      petImage.src = "./pets/animation_500_l9ny6hk3.gif";
-      petImage.width = "100";
-      petImage.height = "100";
-      document.body.appendChild(petImage);
-    }
-  </script>
 </html>
