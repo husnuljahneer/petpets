@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Petpets",
   "description": "Petpets - A web extension for virtual petpet adoption",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "action":{
         "default_popup": "index.html",
         "default_title": "Virtual Pets"
@@ -14,8 +14,10 @@
       "css":["./css/content.css"]
     }
   ],
+  "icons": {
+    "16": "/pets/bat.gif"
+  },
   "permissions": [
-    "*://*/*",
-    "<all_urls>"
+   "tabs"
   ]
 }
