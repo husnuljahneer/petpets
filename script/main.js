@@ -3,16 +3,16 @@ function onload() {
     {
       id: 1,
       name: "dog",
-      url: "./pets/animation_500_l9ny6hk3.gif",
-      width: 150,
-      height: 150
+      url: "./pets/bat.gif",
+      width: 100,
+      height: 100
     },
     {
       id: 2,
-      name: "cat",
-      url: "./pets/animation_500_l9ny6hk3.gif",
-      width: 150,
-      height: 150
+      name: "croc",
+      url: "./pets/crocs.gif",
+      width: 100,
+      height: 100
     }
   ];
 
@@ -20,20 +20,20 @@ function onload() {
     .map(
       (pet) => `
         <center>
-        <div style="margin-top:-100px">
+        <div style="margin-top:-50px;margin-left:30px">
         <table>
           <tr>
             <td>
               <p style="font-weight:bold;">${pet.name.toUpperCase()}</p>
             </td>
-            <td>
+            <td align="center">
               <img src="${pet.url}" width="${pet.width}" height="${
         pet.height
-      }" style="margin-bottom:80px" />
+      }" class="img_style" />
             </td>
             <td>
               <button onclick="chooseMe('${
-                pet.name
+                pet.url
               }')" class="button_primary">Choose Me</button>
             </td>
           </tr>
@@ -44,13 +44,13 @@ function onload() {
     .join("");
 }
 
-function chooseMe(petName) {
+function chooseMe(petUrl) {
   let headerHide = document.getElementById("header");
   let pet = document.getElementById("pet_row");
   pet.style.display = "none";
   headerHide.style.display = "none";
   let petImage = document.createElement("img");
-  petImage.src = "./pets/animation_500_l9ny6hk3.gif";
+  petImage.src = petUrl;
   petImage.width = "150";
   petImage.height = "150";
   document.body.appendChild(petImage);
