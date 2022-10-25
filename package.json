@@ -1,0 +1,19 @@
+{
+  "name": "petpets",
+  "version": "1.0.0",
+  "description": "Browser Pets",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "broswer",
+    "pets",
+    "pets",
+    "companion",
+    "virtual",
+    "pets"
+  ],
+  "author": "husnuljahneer",
+  "license": "ISC"
+}
