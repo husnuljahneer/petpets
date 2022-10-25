@@ -1,19 +1,17 @@
-  {
-  "manifest_version": 2,
-  "name": "Petspet",
-  "description": "Web extension for petspet",
-  "version": "1.0.0",
+{
+  "manifest_version": 3,
+  "name": "Petpets",
+  "description": "Petpets - A web extension for virtual petpet adoption",
+  "version": "1.0.1",
+  "action":{
+        "default_popup": "index.html",
+        "default_title": "Latest Covid Report"
+  },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "css": ["content-ext.css"],
-      "run_at": "document_start",
-      "all_frames": true
+      "matches": ["https://www.jahneer.me/*"],
+      "js": ["script.js"]
     }
-  ],
-  "web_accessible_resources": [
-    "images/*"
   ],
   "permissions": [
     "*://*/*",
